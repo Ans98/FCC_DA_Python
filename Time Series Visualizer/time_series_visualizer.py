@@ -12,7 +12,7 @@ df = pd.read_csv(
     index_col='date'
 )
 
-# Clean data — keep only the middle 95% of values
+# Clean data, keep only the middle 95% of values.
 df = df[
     (df['value'] >= df['value'].quantile(0.025)) &
     (df['value'] <= df['value'].quantile(0.975))
@@ -20,7 +20,7 @@ df = df[
 
 
 def draw_line_plot():
-    # Draw line plot
+    # Draw line plot.
     df_line = df.copy()
 
     fig, ax = plt.subplots(figsize=(16, 5))
